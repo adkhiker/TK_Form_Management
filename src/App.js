@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 
-function App() {
+function LoginForm() {
   const [user, setUser] = useState({ username: "", password: "" });
 
   const handleChange = event => {
@@ -10,12 +10,12 @@ function App() {
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log(user.name);
+    console.log(user.username);
     console.log(user.password);
   };
 
   return (
-    <div className="App">
+    <div className="loginForm">
       {console.log(user)}
       <form onSubmit={event => handleSubmit(event)}>
         <label>
@@ -23,7 +23,6 @@ function App() {
           <input
             type="text"
             name="username"
-            value={user.username}
             onChange={event => handleChange(event)}
           />
         </label>
@@ -32,7 +31,6 @@ function App() {
           <input
             type="text"
             name="password"
-            value={user.password}
             onChange={event => handleChange(event)}
           />
         </label>
@@ -42,4 +40,4 @@ function App() {
   );
 }
 
-export default App;
+export default LoginForm;
